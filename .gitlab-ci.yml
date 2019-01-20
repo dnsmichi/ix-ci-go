@@ -1,0 +1,6 @@
+image: alpine:latest
+
+ix_tests:
+  script:
+  - echo "Hello iX"
+  - exit 1
