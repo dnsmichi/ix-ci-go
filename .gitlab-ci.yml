@@ -6,7 +6,7 @@ tests:
   script:
     - go get && go build
     - go test -v -coverprofile .coverage.txt
-    - go tool cover -html=.coverage.txt
+    - go tool cover -html=.coverage.txt -o coverage.html
   artifacts:
     paths:
     - coverage.html
