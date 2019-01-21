@@ -7,8 +7,7 @@ tests:
     - go get && go build
     - go test -v -coverprofile .coverage.txt
     - go tool cover -html=.coverage.txt
-
-artifacts:
-  paths:
-  - coverage.html
-  expire_in: 1 week
+  artifacts:
+    paths:
+    - coverage.html
+    expire_in: 1 week
