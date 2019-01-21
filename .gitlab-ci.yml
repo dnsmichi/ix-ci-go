@@ -1,6 +1,14 @@
-image: alpine:latest
+image: golang:1.11-stretch
 
-ix_tests:
+before_script:
+
+tests:
   script:
-  - echo "Hello iX"
-  - exit 1
+    - go get && go build
+    - go test -v -coverprofile .coverage.txt
+    - go tool cover -html=.coverage.txt
+
+artifacts:
+  paths:
+  - coverage.html
+  expire_in: 1 week
