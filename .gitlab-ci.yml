@@ -3,14 +3,25 @@ image: golang:1.11-stretch
 before_script:
   - "echo 'Info: Install dependencies here'"
 
+stages:
+  - build
+  - test
+  - coverage
+
 build:
+  stage: build
   script:
     - go get
     - go build
 
 tests:
+  stage: test
   script:
     - go test -cover
+
+coverage:
+  stage: coverage
+  script:
     - go test -v -coverprofile .coverage.txt
     - go tool cover -html=.coverage.txt -o coverage.html
   artifacts:
