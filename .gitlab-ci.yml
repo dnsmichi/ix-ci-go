@@ -1,7 +1,7 @@
 image: golang:1.11-stretch
 
 before_script:
-  - echo "Info: Install dependencies here"
+  - "echo 'Info: Install dependencies here'"
 
 build:
   script:
