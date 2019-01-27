@@ -1,10 +1,15 @@
 image: golang:1.11-stretch
 
 before_script:
+  - echo "Info: Install dependencies here"
+
+build:
+  script:
+    - go get
+    - go build
 
 tests:
   script:
-    - go get && go build
     - go test -cover
     - go test -v -coverprofile .coverage.txt
     - go tool cover -html=.coverage.txt -o coverage.html
